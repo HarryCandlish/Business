@@ -1,20 +1,46 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <div>
-    </div>
-  </header>
-)
+import React, { Component } from "react";
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
+import navigationStyles from "../modules/header.module.scss";
+
+class Header extends Component {
+    render() {
+
+        var ns = navigationStyles
+
+    return (
+        <div>
+            <nav>
+                <div className={ns.container}>
+                    <h1 className={ns.title}>
+                        Pearl
+                    </h1>
+                </div>
+                <ul className={ns.navigationList}>
+                    <a className={ns.link} href="#/">
+                     <li>
+                        <p>Our Work</p>
+                    </li>
+                   </a>
+                   <a className={ns.link} href="#/">
+                     <li>
+                        <p>Clients</p>
+                    </li>
+                   </a>
+                   <a  className={ns.link}href="#/">
+                     <li>
+                        <p>Team</p>
+                    </li>
+                   </a>
+                   <a className={ns.link} href="#/">
+                   </a>
+                </ul>
+            </nav>
+      </div>
+    );
+  }
 }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
 
-export default Header
+
+export default Header;
